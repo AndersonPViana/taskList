@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "type": "module",
   "devDependencies": {
     "sequelize-cli": "^6.6.0",
     "sucrase": "^3.32.0"
