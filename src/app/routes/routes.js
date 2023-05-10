@@ -5,3 +5,5 @@ const routes = Router();
 routes.get('/test', (req, res) => {
   res.send('Success !')
 })
+
+export default routes;
