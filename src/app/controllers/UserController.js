@@ -18,6 +18,10 @@ class UserController {
       email 
     });
   }
+
+  async update(req, res) {
+    
+  }
 }
 
 module.exports = new UserController();
