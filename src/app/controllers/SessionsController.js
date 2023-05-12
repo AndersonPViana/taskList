@@ -21,7 +21,7 @@ class SessionsController {
         id, 
         name,
         email
-      },
+      },                       //	Token formatado
       token: jwt.sign({ id }, '99415723b33478223233245607d50ac3', 
       {expiresIn: '7d'}),
     });
