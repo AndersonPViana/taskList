@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
 const User = require('../models/User.js');
+const auth = require('../../config/auth.js');
 
 class SessionsController {
   async store(req, res) {
@@ -21,9 +22,8 @@ class SessionsController {
         id, 
         name,
         email
-      },                       //	Token formatado
-      token: jwt.sign({ id }, '99415723b33478223233245607d50ac3', 
-      {expiresIn: '7d'}),
+      },                      
+      token: jwt.sign({ id }, auth.secret, auth.expiresIn),
     });
   }
 }
