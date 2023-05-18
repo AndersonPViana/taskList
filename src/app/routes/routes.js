@@ -4,8 +4,7 @@ const UserController = require('../controllers/UserController');
 const SessionsController = require('../controllers/SessionsController');
 const TaskController = require('../controllers/TaskController');
 
-const auth = require('../middleware/auth.js');
-const { removeAttribute } = require('../models/Task');
+const authMiddleware = require('../middleware/auth.js')
 
 const routes = Router();
 
@@ -15,13 +14,13 @@ routes.post('/users', UserController.store);
 // SESSIONS
 routes.post('/sessions', SessionsController.store);
 
-routes.use(auth);
+routes.use(authMiddleware);
 
 // USER
 routes.put('/users', UserController.update);
 
 // TASKS
 routes.post('/tasks', TaskController.store)
-routes.get('tasks', TaskController.index)
+routes.get('/tasks', TaskController.index)
 
 module.exports = routes;
