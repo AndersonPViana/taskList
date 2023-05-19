@@ -22,5 +22,6 @@ routes.put('/users', UserController.update);
 // TASKS
 routes.post('/tasks', TaskController.store);
 routes.get('/tasks', TaskController.index);
+routes.put('/tasks/:task_id', TaskController.update);
 
 module.exports = routes;
