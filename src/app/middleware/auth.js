@@ -9,7 +9,7 @@ module.exports = async(req, res, next) => {
     return res.status(401).json({ message: 'Token not exist'});
   }
 
-  const [, token] = authHeader.split('');
+  const [, token] = authHeader.split(' ');
 
   try {
     const decaded = await promisify(jwt.verify)(token, autoConfig.secret);

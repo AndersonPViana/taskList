@@ -4,7 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "type": "commonjs",
+  "scripts": {
+    "dev": "nodemon src/app.js"
+  },
   "devDependencies": {
+    "nodemon": "^2.0.22",
     "sequelize-cli": "^6.6.0",
     "sucrase": "^3.32.0"
   },
