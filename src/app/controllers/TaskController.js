@@ -44,6 +44,23 @@ class TaskController {
     return res.json(task);
   }
 
+  async deleta(req, res) {
+    const { task_id } = req.params;
+
+    const task = await Task.findByPk(task_id);
+
+    if(!task){
+      return res.status(400).json({ message: 'task does not exist' })
+    }
+
+    if(task.user_id !== req.userId) {
+      return res.status(401).json({ message: 'unauthorized request' })
+    }
+
+    await task.destroy()
+
+    return res.json({ message: 'deleted task' })
+  }
 }
 
 module.exports = new TaskController();
