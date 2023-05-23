@@ -1,6 +1,6 @@
-const jwt = require('jsonwebtoken');
-const User = require('../models/User.js');
-const authConfig = require('../../config/auth.js');
+import jwt from 'jsonwebtoken';
+import User from '../models/User.js';
+import authConfig from '../../config/auth.js';
 
 class SessionsController {
   async store(req, res) {
@@ -30,4 +30,4 @@ class SessionsController {
   }
 }
 
-module.exports = new SessionsController();
+export default new SessionsController();

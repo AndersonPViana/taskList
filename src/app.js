@@ -1,9 +1,9 @@
-const express = require('express');
-const cors = require('cors')
+import express from 'express';
+import cors from 'cors';
 
-const routes = require('./app/routes/routes.js');
+import routes from './app/routes/routes';
 
-require('./database');
+import './database';
 
 const app = express();
 
@@ -15,4 +15,4 @@ app.use(routes);
 
 app.listen(3000, () => {
   console.log('Server on !')
-})
+});

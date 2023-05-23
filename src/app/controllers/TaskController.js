@@ -1,6 +1,6 @@
-const Yup = require('yup');
+import * as Yup from 'yup';
 
-const Task = require('../models/Task');
+import Task from '../models/Task';
 
 class TaskController {
   async index(req, res) {
@@ -63,4 +63,4 @@ class TaskController {
   }
 }
 
-module.exports = new TaskController();
+export default new TaskController();
