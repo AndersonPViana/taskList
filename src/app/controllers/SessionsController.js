@@ -1,31 +1,32 @@
-import jwt from 'jsonwebtoken';
-import User from '../models/User.js';
-import authConfig from '../../config/auth.js';
+import jwt from "jsonwebtoken";
+import User from "../models/User";
+import authConfig from "../../config/auth";
 
 class SessionsController {
   async store(req, res) {
     const { email, password } = req.body;
 
-    const user = await User.findOne({where: {email}});
+    const user = await User.findOne({ where: { email } });
 
-    if(!user) {
-      return res.status(401).json({ error: 'User does not exist' })
+    if (!user) {
+      return res.status(401).json({ error: "User does not exist" });
     }
 
-    if(!(await user.checkpassword(password))) {
-      return res.status(401).json({ error: 'Incorrect password' })
+    if (!(await user.checkpassword(password))) {
+      return res.status(401).json({ error: "Incorrect password" });
     }
 
     const { id, name } = user;
 
     return res.json({
       user: {
-        id, 
+        id,
         name,
-        email
-      },                      
+        email,
+      },
       token: jwt.sign({ id }, authConfig.secret, {
-        expiresIn: authConfig.expiresIn}),
+        expiresIn: authConfig.expiresIn,
+      }),
     });
   }
 }

@@ -6,3 +6,5 @@ node_modules
 
 # Ignorando configurações de padrão de código
 .editorconfig
+.eslintrc.js
+.prettierrc

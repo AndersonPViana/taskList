@@ -1,14 +1,14 @@
-import Sequelize, { Model } from 'sequelize';
+import Sequelize, { Model } from "sequelize";
 
 class Task extends Model {
-  static init(sequelize){
+  static init(sequelize) {
     super.init(
       {
         task: Sequelize.STRING,
         check: Sequelize.BOOLEAN,
       },
       {
-        sequelize
+        sequelize,
       }
     );
 
@@ -16,7 +16,7 @@ class Task extends Model {
   }
 
   static associate(models) {
-    this.belongsTo(models.User, { foreignKey: 'user_id', as: 'user' });
+    this.belongsTo(models.User, { foreignKey: "user_id", as: "user" });
   }
 }
 
