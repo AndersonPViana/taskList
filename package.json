@@ -11,8 +11,7 @@
     "@babel/cli": "^7.21.5",
     "@babel/core": "^7.21.8",
     "nodemon": "^2.0.22",
-    "sequelize-cli": "^6.6.0",
-    "sucrase": "^3.32.0"
+    "sequelize-cli": "^6.6.0"
   },
   "dependencies": {
     "@babel/preset-env": "^7.21.5",

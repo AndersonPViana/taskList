@@ -3,3 +3,6 @@ node_modules
 
 # Ignorando a senha do database
 .env
+
+# Ignorando configurações de padrão de código
+.editorconfig
