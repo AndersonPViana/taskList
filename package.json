@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "type": "commonjs",
   "scripts": {
-    "dev": "nodemon src/app.js"
+    "dev": "nodemon --exec babel src/app.js",
+    "build": "babel src --out-dir lib"
   },
   "devDependencies": {
     "@babel/cli": "^7.21.5",
