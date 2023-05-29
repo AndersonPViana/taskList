@@ -1,9 +1,9 @@
-import Sequelize from "sequelize";
+const Sequelize = require("sequelize");
 
-import databaseConfig from "../config/database";
+const databaseConfig = require("../config/database");
 
-import User from "../app/models/User";
-import Task from "../app/models/Task";
+const User = require("../app/models/User");
+const Task = require("../app/models/Task");
 
 const models = [User, Task];
 
